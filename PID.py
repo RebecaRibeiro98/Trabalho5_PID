@@ -151,7 +151,7 @@ def timerCallBack(event):
         
        
         msg.linear.x = control
-        msg.angular.z =0
+        msg.angular.z = control_ang
   
     pub.publish(msg)
     
