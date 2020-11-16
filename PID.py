@@ -38,7 +38,7 @@ def loop_timer_CallBack (V_Mat):
         for x in str (mat):
             res_each = res_each + int(x)
             m = m+res_each
-    m = m/n
+    m = float (m)/n
     f = m
     t = 1/f
     return t
@@ -160,6 +160,6 @@ pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 odom_sub = rospy.Subscriber('/odom', Odometry, odomCallBack)
 scan_sub = rospy.Subscriber('/scan', LaserScan, scanCallBack)
 
-timer = rospy.Timer(rospy.Duration(0.05), timerCallBack)
+timer = rospy.Timer(rospy.Duration(tempo_loop), timerCallBack)
 
 rospy.spin()
