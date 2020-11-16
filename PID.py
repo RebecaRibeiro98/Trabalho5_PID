@@ -128,7 +128,7 @@ def timerCallBack(event):
                     
     if estado == 'Distancia':
         setpoint = 0.5 # 50 cm do objeto
-        msg.angular.z =0
+        
         scan_len = len(scan.ranges)
         if scan_len > 0:
             real_dist = min(scan.ranges[scan_len-10 : scan_len+10])
@@ -151,7 +151,7 @@ def timerCallBack(event):
         
        
         msg.linear.x = control
-        
+        msg.angular.z =0
   
     pub.publish(msg)
     
